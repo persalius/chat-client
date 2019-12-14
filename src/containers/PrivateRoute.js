@@ -2,12 +2,12 @@ import React, {Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {Route, Redirect, withRouter} from "react-router-dom";
-import {receiveAuth} from "../redux/actions";
+import {recieveAuth} from "../redux/actions";
 
 // Проверка аворизирован ли пользователь. Если да, то перенаправить на страницу chat, если нет - на главную
 class PrivateRoute extends Component {
     componentDidMount() {
-        this.props.receiveAuth();
+        this.props.recieveAuth();
     }
 
     render() {
@@ -33,7 +33,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    receiveAuth
+    recieveAuth
 }, dispatch);
 
 export default withRouter(connect(

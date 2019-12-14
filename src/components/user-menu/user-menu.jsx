@@ -33,8 +33,9 @@ export default function UserMenu(props) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [checkUpdate, setCheckUpdate] = useState(true);
+    const [errorInput, setErrorInput] = useState(false);
 
-    const { disabled } = props;
+    const { disabled, error } = props;
 
     function updateData() {
         if (props.activeUser) {
@@ -50,6 +51,10 @@ export default function UserMenu(props) {
                 setLastName(props.activeUser.lastName);
             }
         }
+
+        if (error) {
+            setErrorInput(true);
+        }
     };
 
     if (checkUpdate) {
@@ -61,6 +66,10 @@ export default function UserMenu(props) {
     };
 
     const handleClose = () => {
+        if (errorInput) {
+            setUsername(props.activeUser.username);
+            setErrorInput(false);
+        }
         setAnchorEl(null);
     };
 
@@ -88,8 +97,15 @@ export default function UserMenu(props) {
             username,
             firstName,
             lastName
-        });
-        toggleEditProfileModal();
+        })
+            .then(result => {
+                if (result.payload && result.payload.message) {
+                    setErrorInput(true);
+                } else {
+                    toggleEditProfileModal();
+                }
+            })
+            .catch(() => console.log("Error"));
     };
 
     const handleLogoutClick = () => {
@@ -128,6 +144,7 @@ export default function UserMenu(props) {
                         </Typography>
                         <TextField
                             required
+                            error={errorInput}
                             fullWidth
                             name="username"
                             label="Username"

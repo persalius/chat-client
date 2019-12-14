@@ -123,6 +123,7 @@ export const errors = (state = intialState.errors, action) => {
         case types.SOCKETS_CONNECTION_FAILURE:
         case types.EDIT_USER_FAILURE:
             return { ...state, chat: action.payload };
+
         case types.FETCH_ALL_CHATS_SUCCESS:
         case types.FETCH_MY_CHATS_SUCCESS:
         case types.FETCH_CHAT_SUCCESS:

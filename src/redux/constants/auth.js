@@ -10,8 +10,6 @@ export const LOGOUT_REQUEST = Symbol("auth/LOGOUT_REQUEST");
 export const LOGOUT_SUCCESS = Symbol("auth/LOGOUT_SUCCESS");
 export const LOGOUT_FAILURE = Symbol("auth/LOGOUT_FAILURE");
 
-export const RECEIVE_AUTH_REQUEST = Symbol("auth/RECEIVE_AUTH_REQUEST");
-export const RECEIVE_AUTH_SUCCESS = Symbol("auth/RECEIVE_AUTH_SUCCESS");
-export const RECEIVE_AUTH_FAILURE = Symbol("auth/RECEIVE_AUTH_FAILURE");
-
-export const READ_MESSAGE = Symbol("auth/READ_MESSAGE");
+export const RECIEVE_AUTH_REQUEST = Symbol("auth/RECIEVE_AUTH_REQUEST");
+export const RECIEVE_AUTH_SUCCESS = Symbol("auth/RECIEVE_AUTH_SUCCESS");
+export const RECIEVE_AUTH_FAILURE = Symbol("auth/RECIEVE_AUTH_FAILURE");
