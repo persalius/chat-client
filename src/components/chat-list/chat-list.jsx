@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const ChatList = ({chats, activeChat, open}) => {
+const ChatList = ({chats, activeChat, open, disabled}) => {
     const classes = useStyles();
 
     return (
@@ -30,7 +30,7 @@ const ChatList = ({chats, activeChat, open}) => {
             {chats && chats.length ? (
                 chats.map(chat => (
                     <ChatListItem
-                        // disabled={disabled}
+                        disabled={disabled}
                         key={chat._id}
                         active={Boolean(activeChat && activeChat._id === chat._id)}
                         chatId={chat._id}
