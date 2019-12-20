@@ -5,5 +5,4 @@ export default {
     SOCKETS_URI: process.env.NODE_ENV === "production"
         ? "wss://dogecodes-chat-api.herokuapp.com/"
         : "ws://localhost:8000/",
-
 };
