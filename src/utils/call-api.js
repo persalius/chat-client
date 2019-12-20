@@ -12,7 +12,7 @@ export default function callApi(endpoint, token, options, payload) {
             ...authHeaders
         },
         data: payload,
-        url: `${config.API_URI}/${endpoint}`,
+        url: `${config.API_URI}${endpoint}`,
         ...options
     })
         .then(result => {
