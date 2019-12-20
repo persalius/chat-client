@@ -30,8 +30,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier-eslint --write '**/*.{js, json}'",
-    "prepush": "npm test"
+    "format": "prettier-eslint --write '**/*.{js, json}'"
   },
   "eslintConfig": {
     "extends": "react-app"
