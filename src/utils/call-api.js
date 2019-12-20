@@ -1,4 +1,5 @@
 import axios from "axios";
+import config from "../config";
 
 export default function callApi(endpoint, token, options, payload) {
     const authHeaders = token ? {"Authorization": `Bearer ${token}`} : {};
@@ -11,7 +12,7 @@ export default function callApi(endpoint, token, options, payload) {
             ...authHeaders
         },
         data: payload,
-        url: `http://localhost:8000/v1/${endpoint}`,
+        url: `${config.API_URI}/${endpoint}`,
         ...options
     })
         .then(result => {

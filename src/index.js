@@ -9,6 +9,7 @@ const root = document.getElementById('root');
 const store = configureStore();
 
 const render = Component => (
+    // eslint-disable-next-line react/no-render-return-value
     ReactDOM.render(
         <Provider store={store}>
             <Component />
