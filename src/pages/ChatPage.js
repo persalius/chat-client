@@ -88,7 +88,6 @@ export default function ChatPage(props) {
 
   const [open, setOpen] = useState(false);
   // const [chatId, setChatId] = useState(undefined);
-    console.log("activeUser", activeUser);
 
 
   // (function () {
@@ -128,7 +127,6 @@ export default function ChatPage(props) {
     }, []);
 
   useEffect(() => {
-      console.log();
       const { chatId } = match.params;
 
       if (chats.active && chatId) {
